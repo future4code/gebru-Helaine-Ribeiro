@@ -19,27 +19,38 @@ function imprimeMensagem() {
 // EXERCÍCIO 01
 function calculaAreaRetangulo() {
   // implemente sua lógica aqui
-  const altura = prompt('Qual a altura do triangulo')
-  const largura = prompt('Qual a largura do triangulo')
-
-  return altura * largura
+  const altura = prompt("Qual é a altura do retângulo?")
+  const largura = prompt("Qual é a largura do retângulo?")
+  
+  console.log(altura * largura)
+  
+ 
 }
 
 // EXERCÍCIO 02
 function imprimeIdade() {
   // implemente sua lógica aqui
+let anoAtual = prompt("qual o ano atual?")
+let anoDeNascimento = prompt("Qual seu ano de nascimento?")
 
+console.log(anoAtual - anoDeNascimento)
 }
 
 // EXERCÍCIO 03
 function calculaIMC(peso, altura) {
   // implemente sua lógica aqui
 
+return peso / (altura * altura)
+/*let pesoKg = prompt("qual é o seu peso?")
+let alturaMetros = prompt("qual é a altura?")
+let imc = pesoKg / (alturaMetros * alturaMetros)
+console.log("seu imc é", imc)*/
 }
 
 // EXERCÍCIO 04
 function imprimeInformacoesUsuario() {
   // implemente sua lógica aqui
+  console.log("Meu nome é NOME", "tenho IDADE anos", "e o meu email é EMAIL")
   // "Meu nome é NOME, tenho IDADE anos, e o meu email é EMAIL."
 
 }
