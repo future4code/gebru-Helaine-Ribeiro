@@ -50,7 +50,11 @@ console.log("seu imc é", imc)*/
 // EXERCÍCIO 04
 function imprimeInformacoesUsuario() {
   // implemente sua lógica aqui
-  console.log("Meu nome é NOME", "tenho IDADE anos", "e o meu email é EMAIL")
+  const NOME = prompt("Qual é o seu nome?")
+  const IDADE = prompt("Qual é a sua idade?")
+  const EMAIL = prompt("Qual é o seu email?")
+  
+  console.log('Meu nome é' + NOME, + 'tenho' + IDADE + 'anos', + 'e o meu email é' + EMAIL, + '.')
   // "Meu nome é NOME, tenho IDADE anos, e o meu email é EMAIL."
 
 }
@@ -58,25 +62,38 @@ function imprimeInformacoesUsuario() {
 // EXERCÍCIO 05
 function imprimeTresCoresFavoritas() {
   // implemente sua lógica aqui
+  const cor1 = prompt("Quais são suas cores favoritas?")
+  const cor2 = prompt("Quais são suas cores favoritas?")
+  const cor3 = prompt("Quais são suas cores favoritas?")
 
+  console.log([cor1, cor2, cor3])
 }
 
 // EXERCÍCIO 06
 function retornaStringEmMaiuscula(string) {
   // implemente sua lógica aqui
-
+  return string.toUpperCase()
+/*const StringEmMaiuscula = "oi"
+StringEmMaiuscula.toUpperCase()*/
+//toLowerCase:usado para transformar em minuscula
 }
 
 // EXERCÍCIO 07
 function calculaIngressosEspetaculo(custo, valorIngresso) {
   // implemente sua lógica aqui
-
+  return  custo / valorIngresso
+/*const custoEspetaculoTeatro = "3000"
+const valorCadaIngresso = "100"
+console.log(custoEspetaculoTeatro / valorCadaIngresso)*/
 }
 
 // EXERCÍCIO 08
 function checaStringsMesmoTamanho(string1, string2) {
   // implemente sua lógica aqui
-
+const string1 = "ola"
+const string2 = "abc"
+var status = (idade >= 18) ? "adulto" : "menor de idade";
+console.log()
 }
 
 // EXERCÍCIO 09
@@ -120,3 +137,4 @@ function checaValidadeInscricaoLabenu() {
   // implemente sua lógica aqui
 
 }
+
