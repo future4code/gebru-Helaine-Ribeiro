@@ -25,10 +25,22 @@ console.log(frase.toUpperCase().replaceAll("A", "I"), frase.length)
 Qual será o valor impresso no console se a entrada do usuário for: `"Subi num ônibus em Marrocos"`?*/
 //SUBI NUM ÔNIBUS EM MIRROCOS 27
 
-//🏅  Desafios
-/*1. Receba uma frase e retorne um array onde cada elemento é uma das palavras da frase, 
-ignorando os espaços*/
+//🏅  Exercícios de escrita de código
+/*1. Faça um programa que pergunte ao usuário seu nome e seu e-mail. 
+Em seguida, Imprima no console a seguinte mensagem:
+O e-mail emailDoUsuario foi cadastrado com sucesso. Seja bem-vinda(o), nomeDoUsuario!*/
+const nome = prompt("Informe seu nome:")
+const email = prompt("Informe seu email:")
+
+const templateString = `o ${email} do ${nome} foi cadastrado com sucesso`
+console.log(templateString)
 
 
-/*2. Dado o array `["Banana", "Morango", "Abacaxi", "Laranja", "Ameixa"]`, faça um programa que
- acha o índice da palavra Abacaxi e imprime tanto o índice quanto o tamanho do array*/
+/*2. Faça um programa que contenha um array com 5 das suas comidas preferidas, armazenado em uma variável. 
+Em seguida, siga os passos:
+a) Imprima no console o array completo*/
+
+
+//b) Imprima no console a mensagem "Essas são as minhas comidas preferidas: ", seguida por cada uma das comidas, **uma embaixo da outra**.
+
+//c) Aqui vai um desafio: pergunte ao usuário uma comida preferida. Troque a segunda comida da sua lista pela inserida pelo usuário. Imprima no consolea nova lista
