@@ -84,16 +84,15 @@ if(idade >=18){
 //2. Agora faça um programa que verifica que turno do dia um aluno estuda. 
 //Peça para digitar **M** (matutino) ou **V** (Vespertino) ou **N** (Noturno).
 // Imprima no console a mensagem "Bom Dia!", "Boa Tarde!" ou "Boa Noite!". Utilize o bloco `if/else`
-    let turnoAula = prompt("Em qual turno você estuda? M/V/N").toLocaleLowerCase()
+    let turnoAula = prompt("Em qual turno você estuda? M/V/N").toUpperCase()
 
     if(turnoAula === "M"){
             console.log("Bom dia!")
 
     }else if(turnoAula === "V"){
         console.log("Boa tarde!")
-    }
-            
-        if(turnoAula === "N"){
+        
+    }else if(turnoAula === "N"){
             console.log("Boa noite!")
              
                     
