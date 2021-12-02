@@ -26,12 +26,10 @@ console.log("Boas vindas ao jogo de Blackjack!")
 
    const usuario = confirm("Quer iniciar uma nova rodada?")
 
-if(usuario === "true"){
-     console.log("O jogo acabou") 
- }
-else{
-     console.log("Iniciaremos uma nova rodada")
-
+if(usuario === true){
+   console.log("Iniciaremos uma nova rodada") 
+ }else{
+    console.log("O jogo acabou") 
 }
 
  
@@ -42,26 +40,23 @@ else{
 /*5 - Nós preparamos um método que permite sortear uma carta. **Ele já está pronto e você só 
 precisa invocá-lo**. Cada carta sorteada é um objeto com duas propriedades: um **texto** que 
 representa o que é escrito na carta; e um **valor** que mostra a pontuação da carta. */
-//const texto = "K"
-//const valor = 10
 
-//function carta(){
 
-//const carta = comprarCarta(texto, valor) 
+const cartaUsuario = comprarCarta()
+const cartaComputador = comprarCarta()
+const cartaUsuario1 = comprarCarta()
+const cartaComputador1 = comprarCarta()
 
 // Sorteia uma carta. Por exemplo, o rei de ouros
-//console.log(carta.texto)// imprime o texto da carta. Nesse caso: "K♦️"
-//console.log(carta.valor)// imprime o valor da carta (um número). Nesse caso: 10)
-//};
-
-//carta(texto, valor)
+console.log(carta.texto)// imprime o texto da carta. Nesse caso: "K♦️"
+console.log(carta.valor)// imprime o valor da carta (um número). Nesse caso: 10)
 
 
 /*6 - O programa deve mostrar, no console, as cartas e pontuação de cada jogador no formato
 mostrado abaixo:
 "Usuário - cartas: Q♣️ 10♣️  - pontuação 20" 
 "Computador - cartas: Q♣️ 10♣️  - pontuação 20" */
-   //console.log()
+console.log()
     
 /*7 - Além disso, deve indicar o vencedor ou um empate:
 "Empate!"
