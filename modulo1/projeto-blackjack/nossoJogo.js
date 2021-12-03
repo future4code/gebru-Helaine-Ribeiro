@@ -27,10 +27,38 @@ console.log("Boas vindas ao jogo de Blackjack!")
    const usuario = confirm("Quer iniciar uma nova rodada?")
 
 if(usuario === true){
-   console.log("Iniciaremos uma nova rodada") 
- }else{
-    console.log("O jogo acabou") 
+const cartaUsuario = comprarCarta()
+const cartaUsuario1 = comprarCarta()
+const cartaComputador = comprarCarta()
+const cartaComputador1 = comprarCarta()
+
+const pontuacaoUsuario = cartaUsuario + cartaUsuario1
+ 
+const pontuacaoComputador = cartaComputador + cartaComputador1
+
+const ganhador = ""
+
+if(usuario > computador){
+   ganhador = usuario
+}else if(computador > usuario){
+}else{
+   empatou
 }
+
+console.log(`usuário - cartas: ${cartaUsuario.texto} ${cartaUsuario1.texto} - pontuação ${pontuacaoUsuario}`)
+
+
+if(ganhador !== "empate"){
+   console.log( `O ${ganhador} ganhou`)
+}else{
+   console.log("empatou")
+}
+  
+
+//console.log("Iniciaremos uma nova rodada") 
+ //}else{
+  //  console.log("O jogo acabou") 
+//}
 
  
 //- **🃏**  Começando uma rodada   
@@ -42,14 +70,11 @@ precisa invocá-lo**. Cada carta sorteada é um objeto com duas propriedades: um
 representa o que é escrito na carta; e um **valor** que mostra a pontuação da carta. */
 
 
-const cartaUsuario = comprarCarta()
-const cartaComputador = comprarCarta()
-const cartaUsuario1 = comprarCarta()
-const cartaComputador1 = comprarCarta()
+
 
 // Sorteia uma carta. Por exemplo, o rei de ouros
-console.log(carta.texto)// imprime o texto da carta. Nesse caso: "K♦️"
-console.log(carta.valor)// imprime o valor da carta (um número). Nesse caso: 10)
+//console.log(carta.texto)// imprime o texto da carta. Nesse caso: "K♦️"
+//console.log(carta.valor)// imprime o valor da carta (um número). Nesse caso: 10)
 
 
 /*6 - O programa deve mostrar, no console, as cartas e pontuação de cada jogador no formato
