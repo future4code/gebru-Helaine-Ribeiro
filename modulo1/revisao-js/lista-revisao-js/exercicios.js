@@ -109,9 +109,10 @@ let novoArray = array.sort()//sort ordena a lista do menor para o maior
  
 let tamanho = novoArray.length//retorna o tamanho do array original
 
-let segundoMenor = novoArray[1]//pega a segunda posição do array,que após ordenado irá conter o segundo menor
+let segundoMenor = novoArray[tamanho1]//pega a segunda posição do array,que após ordenado irá conter o segundo menor
 
 let segundoMaior = novoArray[tamanho-2]//calcula calcula a penultima posição do array através do seu tamanho
+
 
 return segundoMenor, segundoMaior
 
@@ -124,7 +125,7 @@ function retornaChamadaDeFilme(filme) {
 
 console.log(filme(`Venha assistir ao filme ${nome}, de 2006, dirigido ${diretor}`))
 
-
+}
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {
@@ -153,5 +154,5 @@ function retornaArrayOrdenadoAlfabeticamente(consultas) {
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
-   
+  
 }
