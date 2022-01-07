@@ -1,0 +1,25 @@
+
+header { 
+height: 100vw;
+background-color: mediumvioletred;
+display: flex;
+justify-content: space-between;
+
+
+ }
+ 
+ header button {
+    justify-self: end;
+
+}
+
+ 
+ #container {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 50px 1fr 50px;
+    align-items: center;
+ }
+ 
+
+ 
