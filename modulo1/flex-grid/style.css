@@ -1,25 +1,84 @@
-
-header { 
-height: 100vw;
-background-color: mediumvioletred;
-display: flex;
-justify-content: space-between;
-
-
- }
- 
- header button {
-    justify-self: end;
-
+/* GLOBAL */
+* {
+   margin: 0;
+   padding: left;
+   box-sizing: border-box;
 }
 
- 
- #container {
-    height: 100vh;
-    display: grid;
-    grid-template-rows: 50px 1fr 50px;
-    align-items: center;
- }
- 
+.icone {
+   width: 20px;
+   height: 20px;
+   margin: 0 10px;
+}
 
- 
+.icone-texto {
+   display: flex;
+   align-items: center;
+}
+
+/* PRINCIPAL */
+body {
+   width: 100vw;
+   min-height: 100vh;
+   display: grid;
+   grid-template-rows: 60px 1fr 60px;
+   grid-template-columns: 300px 1fr 300px;
+}
+
+/* HEADER */
+header {
+   height: 60px;
+   background: mediumvioletred;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 20px;
+   grid-column: 1/-1;
+}
+
+/* MENU NAVEGACAO */
+nav {
+   width: 200px;
+   background-color: #f2d0e0;
+   padding: 10px;
+}
+
+nav .botao-nav {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin: 15px 0;
+}
+
+/* CONTEUDO PRINCIPAL */
+main {
+   display:grid;
+   grid-template-columns: repeat(4, 1fr);
+   row-gap: 20px;
+   column-gap: 20px;
+   margin: 20px;
+}
+
+main .imagem-card {
+   width: 150px;
+}
+
+main .card-produto {
+   width: max-content;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   box-shadow: 2px 2px 5px darkgray;
+   text-align: center;
+}
+
+/* RODAPÉ */
+footer {
+   height: 60px;
+   background: mediumvioletred;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   grid-column: 1/-1;
+}
