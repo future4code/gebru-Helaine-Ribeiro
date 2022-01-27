@@ -1,0 +1,27 @@
+.bigPequeno-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    padding: 20px 130px;
+    margin-bottom: 10px;
+    height: 10px;
+   text-align: left;
+ 
+}
+
+.bigPequeno-container > img {
+    width: 30px;
+  
+   
+}
+
+
+ 
+
+
+  
+   
+
+
+
+
