@@ -7,7 +7,6 @@ import iconeCoracaoBranco from '../../img/favorite-white.svg'
 import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
-import { SecaoCurtida } from '../SecaoCurtida/SecaoCurtida'
 
 const PostContainer = styled.div`
   border: 1px solid gray;
@@ -51,16 +50,15 @@ class Post extends React.Component {
 
   onClickCurtida = () => {
     this.setState({
-     curtido: !this.state.curtido
+      curtido: !this.state.curtido
+      } )
+    if(!this.state.curtido){
+      this.state.numeroCurtidas = +1
+    }else{
+      this.state.numeroCurtidas = this.state.numeroCurtidas -1
     }
-    )
-  }
 
-  aoEnviarCurtida = () => {
-    this.setState({
-    curtido: false,
-      numeroCurtidas: this.state.numeroCurtidas + 1
-    })
+      console.log(this.state.numeroCurtidas)
   }
 
   onClickComentario = () => {
@@ -75,8 +73,11 @@ class Post extends React.Component {
       numeroComentarios: this.state.numeroComentarios + 1
     })
   }
+ 
 
-  render() {
+
+  render() { 
+
     let iconeCurtida
 
     if(this.state.curtido) {
@@ -85,14 +86,13 @@ class Post extends React.Component {
       iconeCurtida = iconeCoracaoBranco
     }
   
-  
 
     let componenteComentario
 
     if(this.state.comentando) {
       componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario}/>
     }
-
+  
     return <PostContainer>
       <PostHeader>
         <UserPhoto src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>

@@ -14,7 +14,7 @@ class App extends React.Component {
     return (
       <MainContainer>
         <Post
-          nomeUsuario={'paulinha'}
+          nomeUsuario={'Paulinha'}
           fotoUsuario={'https://picsum.photos/50/50'}
           fotoPost={'https://picsum.photos/200/150'}
         />
@@ -25,12 +25,12 @@ class App extends React.Component {
           fotoPost={'https://picsum.photos/id/0/5616/3744'}
         />
 
-         <Post
+        <Post
           nomeUsuario={'Pol'}
           fotoUsuario={'https://picsum.photos/id/1010/5184/3456'}
           fotoPost={'https://picsum.photos/id/1025/4951/3301'}
         />
-        
+
       </MainContainer>
     );
   }

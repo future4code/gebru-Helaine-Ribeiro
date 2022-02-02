@@ -16,7 +16,7 @@ export class SecaoComentario extends Component {
 	state = {
 
 	}
-	
+
 	onChangeComentario() {
 
 	}
