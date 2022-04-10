@@ -1,4 +1,7 @@
 #link surge:http://maniacal-flame.surge.sh/
+
+ Para acessar a parte do admin, utilize o email astrodev@gmail.com e a senha 123456
+ 
 ![image](https://user-images.githubusercontent.com/90282001/162641731-1f75de70-8ab5-4e4c-8a6e-a50fae18ecbf.png)
 
 
