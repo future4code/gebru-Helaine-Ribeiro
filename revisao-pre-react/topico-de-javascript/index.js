@@ -9,3 +9,20 @@ function calculaSalario(qtdeCarrosVendidos, valorTotalVendas) {
    return salarioFinal
     
   }
+
+  //exercicio 2
+  function calculaPrecoTotal(quantidade) {
+ 
+  
+    if(quantidade < 12) {
+        return( valor = 1.3 * quantidade)
+      }else {
+        return( valor = 1 * quantidade)
+      }
+        
+      
+      
+      }
+
+  //exercicio 3
+        
