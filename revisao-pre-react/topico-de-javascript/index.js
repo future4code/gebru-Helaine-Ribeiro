@@ -15,9 +15,9 @@ function calculaSalario(qtdeCarrosVendidos, valorTotalVendas) {
  
   
     if(quantidade < 12) {
-        return( valor = 1.3 * quantidade)
+        
       }else {
-        return( valor = 1 * quantidade)
+        
       }
         
     
