@@ -13,64 +13,85 @@ const brinquedos = [
     {   nome:"patins", preço:25, classificacaoIndicada:"maiores de 5 anos", quantidade:2},
 ]
 
+ 
 
 
 
-const lojinhaNoConsole=()=>{
-    const iniciarPrograma = prompt("O que você deseja fazer?  vitrine / compra ou zerar o estoque") 
-   
+    const iniciarPrograma = prompt("O que você deseja fazer?  vitrine / compra ou zerar estoque").toLocaleLowerCase()
    switch(iniciarPrograma) {
-      case "vitrine" :
-      console.log (prompt("qual tipo de produto deseja ver? alimentos/brinquedos"))
-      
-      console.log (prompt("qual tipo de produto deseja ver? brinquedos "))
-      
+      case "vitrine":
+     usuario= prompt("qual tipo de produto deseja ver? alimentos/brinquedos")
+      if(usuario ==="brinquedos"){
+       produtos= brinquedos.map((produto)=>{
+        console.log(produto.nome)
+        
+       })
+       usuario= confirm(" deseja realizar outra visualização de produtos?")
+
+      }else if(usuario ==="alimentos"){
+        podutos = alimentos.map((produto)=>{
+          console.log(produto.nome)
+        })
+        usuario= confirm(" deseja realizar outra visualização de produtos?")
+     
+    }else{
+      prompt (" tipo de produto para visualizar")
+    }
+       
         break;
+        
       case  "compra" :
-        console.log(prompt("qual tipo de produto deseja comprar? brinquedos / alimentos"))
-  
+        usuario = (prompt("qual tipo de produto deseja comprar? brinquedos / alimentos"))
+         if(usuario==="brinquedos"){
+           usuario=prompt( "qual o nome do produto que deseja comprar?")   
+          seExiste=brinquedos.filter((produto)=>{
+            if(usuario !== produto.nome ) 
+            return  true;
+        }, {});
+          
+          }else if(usuario ==="alimentos"){
+          usuario=prompt( "qual o nome do produto que deseja comprar?")
+
+          seExiste = brinquedos.find(produto => produto.name === usuario.name);
+          
+        
+      }else{
+        alert ("não foi possível realizar a compra.")
+      }
+
+      
         break;
-      case "zerar o estoque":
-        console.log(confirm("limpar todo o estoque"))=== true
-        console.log(confirm("realmente deseja prosseguir com a ação"))
+       
+
+      case "zerar estoque":
+        usuario=prompt("limpar todo o estoque? yes /no  ")
+        if(usuario ==="yes"){
+          usuario=confirm("realmente deseja prosseguir com a ação")
+   
+         }else if(usuario ==="no"){
+          usuario=confirm("realmente deseja prosseguir com a ação")
+         }else{
+           usuario= ("operação cancelada")
+         }
+
+      
         break;
       default:
         console.log()
       break;
      }
-    }
-
-  // lista do tipo de produto selecionado (brinquedos).
-  const listaProdutos=[]
-  const usuario= ""
-  confirm("deseja realizar outra visualização de produtos")
-  if(usuario === true){
-console.log("programa encerrado")
-
-  }else if(usuario===false){
-prompt(listaProdutos = brinquedos.filter)
-  }
-  // lista do tipo de produto selecionado (alimentos).
-
-
-     // Verifica se já existe esse produto na lista
-     const seExiste = alimentos.find(element => element[0] === nome);
-
-     if (seExiste) {
-       prompt("qual a quantidade a ser comprada?");
-       
-     } else if(!seExiste){
-      alert("não foi possível realizar a compra.");
-     }
- 
-     produtos.push([nome, preço]);
-
+    
      
+
+    /*
+   
      //soma das quantidades.
 const total = brinquedos.reduce((resultado, quantidade) => {
   return (resultado + quantidade.preço );
 }, 0);
 console.log( total )
+    */
+  
     
 
     
