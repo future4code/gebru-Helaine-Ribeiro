@@ -7,8 +7,8 @@ export const Router = () => {
     return (
       <BrowserRouter>
         <Routes>
-          <Route index element={<CharacterListPage/>}></Route>
-          <Route path="/" element={<CharacterDetailPage/>}></Route>
+          <Route exact path="/" element={<CharacterListPage/>}></Route>
+          <Route path="/detalhe" element={<CharacterDetailPage/>}></Route>
           <Route path="*" element={<ErrorPage/>} />
         </Routes>
       </BrowserRouter>

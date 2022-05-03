@@ -1,4 +1,32 @@
+import styled from "styled-components"
+
+export const CharacterCard = styled.div`
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    &:hover {
+        cursor: pointer;
+        background-color: lightblue;
+    }
+`
+
+/*
+export const CharacterCard = styled.div`
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    &:hover {
+        cursor: pointer;
+        background-color: lightblue;
+    }
+`
+*/
+
+/*
 import styled from "styled-components";
+
 
 
 export const CharacterCard= styled.div`
@@ -13,6 +41,7 @@ position: center;
    
    
 `
+
 
 export const CharacterContainer= styled.div`
     display: flex;
@@ -62,3 +91,4 @@ const ButtonsContainer = styled.div`
       left:10px ;
       overflow: auto;
 `
+*/
