@@ -1,4 +1,20 @@
+import React from "react";
+import  {Router}  from "./routes/Router";
 
+
+const App=()=>{
+  return(
+    <div>
+      <Router/>
+    </div>
+    
+  )
+}
+
+export default App
+
+
+/*
 import React, { useState } from "react"
 import CharacterDetailPage from "./pages/CharacterDetailPage/CharacterDetailPage"
 import CharacterListPage from "./pages/CharacterListPage/CharacterListPage"
@@ -33,24 +49,5 @@ function App() {
 
 export default App;
 
-/*
-import React from "react";
-//import { Router } from "./routes/Router";
-import React, {useState} from "react";
-//import CharacterDetailPage from "./pages/CharacterDetailPage/CharacterDetailPage";
-import CharacterListPage from "./pages/CharacterListPage/CharacterListPage"
-
-const App =()=> {
-  return (
-    <div >
-     <Router/>
-      
-    </div>
-  );
-}
-
-export default App;*
-
  */
-
 

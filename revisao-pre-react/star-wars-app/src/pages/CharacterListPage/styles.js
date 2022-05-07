@@ -1,94 +1,50 @@
 import styled from "styled-components"
 
-export const CharacterCard = styled.div`
-    border: 1px solid black;
-    padding: 10px;
-    margin: 10px;
-    width: 300px;
-    &:hover {
-        cursor: pointer;
-        background-color: lightblue;
-    }
-`
-
-/*
-export const CharacterCard = styled.div`
-    border: 1px solid black;
-    padding: 10px;
-    margin: 10px;
-    width: 300px;
-    &:hover {
-        cursor: pointer;
-        background-color: lightblue;
-    }
-`
-*/
-
-/*
-import styled from "styled-components";
-
-
-
 export const CharacterCard= styled.div`
-  display: flex;
-position: center;
-    color: white;
-    box-shadow: 11px 5px 10px 9px rgba(0,0,0,9);
-    font-size: 1em;
-    border-radius: 4px;
-    margin: 350px  0;
-    justify-content: space-around;
-   
+-webkit-text-stroke: 1px black;
+  display: inline-flex;
+width: 80vw;
+    height: 10vh ;
+    color:black;
+    font-size: 20px;
+    padding: 5px 10px;
+    justify-content: space-between;
+    margin-top:90px;
+    text-shadow: 0.1em 0.1em 0.2em red;
    
 `
 
 
 export const CharacterContainer= styled.div`
-    display: flex;
-    justify-content: space-around;
+display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+    flex-direction: column;
     width: 100vw;
-    color: white;
-    position: center;;
+    height: 100vh ;
     background-image:url("https://th.bing.com/th/id/R.68b9bc10224a7b7168d4cd0a8668e7d5?rik=dgHxQep470OO2w&pid=ImgRaw&r=0");
-   
+    position: center;
+align-items:center ;
+
    ` 
    
    export const Character= styled.h1`
-   display: flex;
-   margin: 50px  ;
-position: center;
-justify-content: space-around;
-    font-size: 50px;
-    
-   background: red; 
-
+   -webkit-text-stroke: 1px red;
+   color: black;
+    padding:10px ;
+    &:hover {
+        cursor: pointer;
+        color:  red;
+    } 
+    margin-top:30px;
+    text-shadow: 2px 4px black;
+    font-size: 5em;
+    text-shadow: 0.1em 0.1em 0.1em black;
 `
-const ButtonsContainer = styled.div`
-    display: flex;
-    justify-content: space-around;
-    width: 500px;
-    margin: 10px 0;
    
-
-    button{
-        background-color: #455d7a;
-        box-shadow: black 2px 1px 2px 2px;
-    background-color: #455d7a;
-    background-image: linear-gradient(20deg, #455d7a,white);
-    }
-`
-
- const AdminHomeButtonsContainer= styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center ;
-    width: 500px;
-    border:black 2px solid;
-      box-shadow: black 1px 1px;
-      background-color: #455d7a;
-      padding:20px ;
-      left:10px ;
-      overflow: auto;
-`
-*/
