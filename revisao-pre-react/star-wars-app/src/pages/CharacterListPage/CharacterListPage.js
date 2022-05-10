@@ -2,7 +2,7 @@ import React from "react";
 import useRequestData from "../../hooks/useRequestData"
 import { BASE_URL } from "../../constants/urls";
 import { useNavigate } from "react-router-dom";
-import { CharacterContainer,CharacterCard,Character } from "./styles"
+import { CharacterContainer,CharacterCard,Characterh1,CharacterButton } from "./styles"
 
 
 const CharacterListPage=()=> {
@@ -13,12 +13,12 @@ const CharacterListPage=()=> {
     characterList.results &&
     characterList.results.map((character, index) => {
       return (
-        <div
+        <div 
           onClick={() => goTodetailPage(index + 1)}
           key={character.name}
         >
           
-          <p>{character.name}</p>
+          <CharacterButton>{character.name}</CharacterButton>
         </div>
       );
     });
@@ -29,7 +29,7 @@ const CharacterListPage=()=> {
 
   return (
     <CharacterContainer>
-      <Character>Star Wars🛸</Character>
+      <Characterh1>Star Wars</Characterh1>
       <CharacterCard>
       {showCharacters} 
       </CharacterCard>

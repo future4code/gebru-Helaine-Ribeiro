@@ -34,7 +34,7 @@ const CharacDetailPage=()=> {
       <p><NegritoCard>População:</NegritoCard> {characterDetails.population}</p>
 
       <ButtonCard onClick={() => goToListpage(navigate)}>
-        Voltar 🛸
+       Voltar 🛸 
       </ButtonCard>
     </DetailContainer>
   );
