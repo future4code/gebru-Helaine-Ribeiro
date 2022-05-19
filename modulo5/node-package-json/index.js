@@ -10,6 +10,8 @@ console.log( `Olá, ${nome}! Você tem ${idade} anos. . Em sete anos você terá
 
 
 //Exercício 2
+/**/
+/*
 const num1= Number(process.argv[2])
 const num2= Number(process.argv[3])
 
@@ -23,5 +25,7 @@ console.log(soma)
 console.log(subtração)
 console.log(divisao)
 console.log(mutiplicacao)
+*/
+
 
 //Exercício 3
