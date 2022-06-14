@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+   
+    "target": "es2016",                                  
+    "module": "commonjs",                               
+    "sourceMap": true,
+    "outDir": "./build", // outDir especifica a pasta em que serão salvos os arquivos transpilados
+    "rootDir" : "./src", // rootDir especifica a pasta raíz do projeto
+    "removeComments": true,// removeComments remove comentários dos arquivos transpilados 
+
+    "esModuleInterop": true,                             
+    "forceConsistentCasingInFileNames": true,            
+   
+    "strict": true,                                      
+   
+    "skipLibCheck": true                                 
+}
+}
