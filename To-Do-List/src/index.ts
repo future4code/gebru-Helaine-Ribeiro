@@ -2,99 +2,171 @@ import connection from './connection';
 import app from './app';
 import { Request, Response } from 'express';
 import { v4 as uuidv4 } from 'uuid';
-//import { User, users, USER_TYPE } from "./types";
+//import { User } from "./types";
 
 app.get('/test', (req, res) => {
     res.status(200).send("ok");
 });
 
-app.get('/actor/:id', async (req,res) => {
+
+//1. Criar usuário 
+app.post("/user", async (req: Request, res: Response)=>{
+
+    const{name,nickname,email} = req.body;
+    const id = uuidv4()
+   
+    if(!name || !nickname || !email){
+     
+        res.status(422).send("faltam parâmetros a serem passados no body");
+        
+    }
+    
+    try{
+        await connection.raw(`
+        INSERT INTO User(id,name,nickname,email)
+        VALUES(
+            
+            "${id}",
+            "${name}",
+            "${nickname}",
+            "${email}"
+        )
+        `
+        )
+        res.status(201).send("usuário cadastrado com sucesso!")
+        
+    } catch(error:any) {
+res.status(400).send(error.message)
+    }
+}); 
+  
+//2. Pegar usuário pelo id
+app.get('/user/:id', async (req,res) => {
+   
     try {
-        const result = await connection("Actor")
-            .select('name')
+        
+        const result = await connection("User")
+            .select("id",'nickname')
             .where({
                 id: req.params.id
             });
-        res.send(result);
-    } catch(e) {
-        console.error({e});
-        return res.status(500).send("Algo deu errado.");
-    }
-});
-// pega todos os atores
-app.get('/actor', async (req, res) => {
-    try {
-        // const result = await connection.raw(`
-        //     SELECT * FROM Actor
-        // `);
-        const result = await connection("Actor").select();
-        res.send(result);
-    } catch(e) {
-        console.error({e});
-        return res.status(500).send("Algo deu errado.");
+            
+        res.status(200).send(result);
+    } catch(error:any) {
+        res.status(400).send(error.message)
     }
 });
 
-app.post('/actor', async (req: Request, res: Response) => {
-
-    const { birthday, name, salary, gender } = req.body;
-    try {
-        await connection.raw(`
-            INSERT INTO Actor (id, name, birth_date, salary, gender)
-            VALUES (
-                07,
-                "${name}",
-                \"${birthday}\",
-                ${Number(salary)},
-                \"${gender}\"
-            )
-    `);
-    } catch(e) {
-        console.error({e});
-        return res.status(500).send("Algo deu errado.");
-    }
-    res.send("Ok");
-});
-
-app.put('/actor/:id', async (req, res) => {
+//3. Editar usuário
+app.put('/user/edit/:id', async (req, res) => {
     const id = req.params.id;
-    const { birthday, name, salary, gender } = req.body;
+    const {  name, nickname} = req.body;
+
+    if(!name || !nickname ){
+     
+        res.status(422).send("faltam parâmetros a serem passados no body");
+        
+    }
     
     try {
-        await connection("Actor")
+        await connection("User")
             .update({
                 name,
-                salary,
-                gender,
-                birth_date: birthday
+                nickname
             })
             .where({
                 id
             });
-        res.send("Ok");
-    } catch(e) {
-        console.error({e});
-        return res.status(500).send("Algo deu errado.");
+        res.send("usuário alterado com sucesso!");
+    } catch(error:any) {
+        res.status(400).send(error.message)
     }
 });
 
-app.delete('/actor/:id', async (req, res) => {
+//4. Criar tarefa
+app.post("/task", async (req: Request, res: Response)=>{
+
+    const{title,description,limitDate} = req.body;
+    const id = uuidv4()
+    const creatorUserId =uuidv4()
+   
+    
+   
+    if(!title || !description || !limitDate || !creatorUserId){
+     
+        res.status(422).send("faltam parâmetros a serem passados no body");
+        
+    }
+    
+    try{
+        await connection.raw(`
+        INSERT INTO Task2(id,title,description,limitDate,creatorUserId)
+        VALUES(
+            
+            
+            "${id}",
+            "${title}",
+            "${description}",
+            "${limitDate}",
+            "${creatorUserId}"
+        )
+  
+        `
+        )
+        res.status(201).send("tarefa criada com sucesso!")
+        
+    } catch(error:any) {
+res.status(400).send(error.message)
+    }
+}); 
+
+//5. Pegar tarefa pelo id
+app.get('/task/:id', async (req,res) => {
+    try {
+        const result = await connection("Task2")
+            .select("title","description","limitDate","creatorUserId")
+            .where({
+                id: req.params.id
+            });
+        res.send(result);
+    }catch(error:any) {
+        res.status(400).send(error.message)
+    }
+});
+ 
+//6. Pegar todos os usuários 
+app.get('/user', async (req, res) => {
+    try {
+        // const result = await connection.raw(`
+        //     SELECT * FROM User
+        // `);
+        const result = await connection("User").select();
+        res.send(result);
+    } catch(error:any) {
+        res.status(400).send(error.message)
+    }
+});
+
+
+
+
+//20. Deletar usuário
+app.delete('/user/:id', async (req, res) => {
     // const id = req.params.id;
     // const { id } = req.params;
 
     try {
-        await connection("Actor")
+        await connection("User")
             .delete()
             .where({
                 id: req.params.id
             });
         res.send("Ok");
         
-    } catch(e) {
-        console.error({e});
-        return res.status(500).send("Algo deu errado.");
+    } catch(error:any) {
+        res.status(400).send(error.message)
     }
-});
+}); 
 
 
 
