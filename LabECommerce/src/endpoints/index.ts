@@ -15,7 +15,7 @@ app.get
 app.get("/users", getAllUsers)
 
 app.get("/products", getAllProduct)
-
+//teste
 
 // pega  usuarios pelo id
 app.get("/users/:id", getAllUsersId)
