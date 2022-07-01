@@ -1,0 +1,52 @@
+// pegar usuarios
+GET http://localhost:3003/users
+
+//criar usuarios
+###
+POST http://localhost:3003/users
+Content-Type: application/json
+
+{
+"name": "All",
+"email": "all@gmail.com", 
+"password": "1a1"  
+}
+  
+//pegar usuario pelo id
+###
+GET http://localhost:3003/users/1
+
+//alterar dados do usuario
+###
+PUT http://localhost:3003/users/1
+Content-Type: application/json
+
+{
+"name": "All",
+"email": "all@gmail.com", 
+"password": "1a2"  
+}
+
+// deletar usuario
+###
+DELETE http://localhost:3003/users/1
+
+###
+POST http://localhost:3003/products
+Content-Type: application/json
+
+{
+"name": "flor",
+"price": 25, 
+"image_url": "https://th.bing.com/th/id/OIP.6uZ9CEHikAliMpZ5P2-aYQHaGj?pid=ImgDet&rs=1"  
+}
+
+###
+GET http://localhost:3003/products
+
+
+
+
+
+
+
