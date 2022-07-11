@@ -5,6 +5,10 @@ import { getAllUsers,getAllUsersId } from "./cadstroUsuarios/getAllUsers";
 import { createUser } from "./cadstroUsuarios/createUser";
 import {createProduct} from "./cadstroProdutos/createProduct"
 import {getAllProduct} from "./cadstroProdutos/getAllProduct"
+import { changeUser } from "./cadstroUsuarios/changeUser";
+import { deleteUser } from "./cadstroUsuarios/deleteUser";
+import { createRegistro } from "./registroCompras/createRegistro";
+import { getAllRegistro } from "./registroCompras/getAllRegistro";
 
 app.get
 ('/', async(req: Request, res: Response):Promise<void> => {
@@ -14,8 +18,12 @@ app.get
 // pega todos os usuarios
 app.get("/users", getAllUsers)
 
+// pega todos os produtos
 app.get("/products", getAllProduct)
-//teste
+
+// historico de  todos as compras
+app.get("/users/:user_id/purchases", getAllRegistro)
+
 
 // pega  usuarios pelo id
 app.get("/users/:id", getAllUsersId)
@@ -26,52 +34,17 @@ app.post('/users', createUser)
 //criar produtos
 app.post('/products', createProduct)
 
-// altera o usuario
-    app.put('/users/:id', async (req, res):Promise<void> => {
-        const id = req.params.id;
-        const { name, email, password } = req.body;
-        
-        try {
-            await connection("labecommerce_users")
-                .update({id,name, email, password})
-                .where({id});
 
-            res.send("alteração feita com sucesso");
-        } catch(e) {
-            console.error({e});
-           res.status(500).send("Algo deu errado.");
-           //res.status(statusCode || 500).send(error.message);
-        }
-    });
+//criar registro de compras
+app.post('/purchases', createRegistro)
+
+// altera o usuario
+    app.put('/users/:id', changeUser)
+        
 
 //deleta usuario
-    app.delete('/users/:id', async (req, res):Promise<void> => {
-        // const id = req.params.id;
-        // const { id } = req.params;
-    
-        try {
-            await connection("labecommerce_users")
-                .delete()
-                .where({
-                    id: req.params.id
-                });
-            res.send("usuário deletado com sucesso");
-            
-        } catch(e) {
-            console.error({e});
-             res.status(500).send("Algo deu errado.");
-             //res.status(statusCode || 500).send(error.message);
-        }
-    });
-    
+    app.delete('/users/:id', deleteUser)
+        
 
-    /* CREATE TABLE labecommerce_purchases(
-        id INT PRIMARY KEY AUTO_INCREMENT,
-        user_id VARCHAR(255),
-        FOREIGN KEY(user_id) REFERENCES labecommerce_users(id),
-product_id VARCHAR(255),
-        FOREIGN KEY(product_id) REFERENCES labecommerce_products(id),
-quantity INT,
-total_price INT
-    ) */
+    
     

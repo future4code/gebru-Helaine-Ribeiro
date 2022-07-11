@@ -44,6 +44,25 @@ Content-Type: application/json
 ###
 GET http://localhost:3003/products
 
+###
+//criar registro de compras
+###
+POST http://localhost:3003/purchases
+Content-Type: application/json
+
+{
+"user_id": 1,
+"product_id": 01, 
+"quantity": 2 ,
+
+
+}
+  
+//pegar historico de compras pelo id
+###
+GET http://localhost:3003/users/:user_id/purchases
+
+
 
 
 
