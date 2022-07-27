@@ -1,0 +1,18 @@
+// padrão
+GET http://localhost:3003/all
+###
+
+
+###
+POST http://localhost:3003/user
+Content-Type: application/json
+
+{
+	"name": "Michele Scott",
+	"email": "michele@dundermifflin.com",
+	"password": "1theboss"	
+}
+
+###
+DELETE   http://localhost:3003/:id
+
