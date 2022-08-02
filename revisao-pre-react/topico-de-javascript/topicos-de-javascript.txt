@@ -1,0 +1,103 @@
+>>>>>>>	 Funções em JavaScript <<<<<<<
+Uma função é um bloco de código que pode ser chamado (ou invocado) a partir de um nome.
+● Parâmetros são como se fossem variáveis criadas na declaração da função 
+● Argumentos são os valores passados na chamada da função 
+● Cada parâmetro recebe seu valor dos argumentos, seguindo a mesma ordem
+Sintaxe:
+function functionName(parametros) {
+    return a * b;
+}
+//chamando função functionName(argumentos)
+Arrouw function
+ const functionName=(a, b)=> {
+  return a * b;
+}
+//chamando função functionName(2,3)
+
+>>>>>>>	Objeto em JavaScript ⇒ Sintaxe, o que é e como usar <<<<<<<
+Objetos são estruturas de sintaxe que nos permitem representar dados mais complexos de uma maneira mais organizada.
+As propriedades dos objetos podem assumir quaisquer valores  String, number, boolean, array, etc. Funções (neste caso, são chamados de método)
+Para acessar ou alterar as propriedades dos objetos, há duas sintaxes:  Notação do ponto, Notação dos colchetes
+Sintaxe:
+const instrutora = {
+ nome: 'Amanda Rangel',
+ idade: 27,
+ email: 'mandinharock@gmail.com'
+ }                                                  
+const nomeDaInstrutora = instrutora.nome;  // Notação do ponto  ou
+const nomeDaInstrutora = instrutora["nome"]; // Notação dos colchetes
+console.log(nomeDaInstrutora)
+
+>>>>>>>	Array ⇒ Sintaxe, o que é e como usar <<<<<<<
+Arrays são listas de elementos, no javascript usamos colchetes para agrupar os itens de uma lista
+Podemos colocar elementos de qualquer tipo que vimos até agora dentro de um array! Números, strings e booleanos. 
+Também podemos ter elementos de tipos diferentes dentro de um mesmo array
+Sintaxe:
+const meuArray = ["bananinha", 15, true]
+
+>>>>>>>	Map ⇒ Sintaxe, o que é e como usar <<<<<<<
+O método map() invoca a função callback passada por argumento para cada elemento do Array e devolve um novo Array 
+como resultado.
+Sintaxe:
+const numbers = [1, 4, 9];
+const doubles = numbers.map(function(num) {
+  return num * 2;
+});
+// doubles é agora [2, 8, 18]. numbers ainda é [1, 4, 9]
+
+>>>>>>>		Filter ⇒ Sintaxe, o que é e como usar <<<<<<<
+O método filter() cria um novo array com todos os elementos que passaram no teste implementado pela função 
+fornecida.
+Input: somente uma função de call-back, esta função pode receber três parâmetros 
+* primeiro: corresponde ao valor do elemento do array naquela etapa do loop (item) 
+* segundo: o valor do índice daquele elemento (index) 
+* terceiro: o array original em si (array) ● Esta função deve retornar um boleano (true/false)
+Sintaxe: 
+const pokemons = [ 
+ { nome: "Bulbasaur", tipo: "grama" }, 
+ { nome: "Bellsprout", tipo: "grama" },
+ { nome: "Charmander", tipo: "fogo" },
+ { nome: "Vulpix", tipo: "fogo" }, 
+ { nome: "Squirtle", tipo: "água" }, 
+ { nome: "Psyduck", tipo: "água" }, 
+] 
+const apenasPokemonsDeGrama = pokemons.filter((pokemon, indice, array) => { return pokemon.tipo === "grama" })
+
+>>>>>>> 	Diferenças entre Map e Filter <<<<<<<
+ ● Map Criar um novo array com elementos modificados em relação ao original, retorna um array igual ao original
+ ● Filter Criar um novo array com alguns elementos do original ,retorna um array igual ou menor que o original
+
+ >>>>>>> 	Diferença entre os métodos push e pop e como usá-los <<<<<<<
+ O método push() adiciona um ou mais elementos ao final de um array e retorna o novo comprimento desse array.
+ Sintaxe
+arr.push()
+O método pop() remove o último elemento de um array e retorna aquele elemento.
+Sintaxe
+arr.pop()
+
+>>>>>>> 	Método splice do array ⇒ Sintaxe, o que é e como usar <<<<<<<
+O método splice() é usado para remover ou substituir elementos existentes do array. 
+Este método altera ou modifica a matriz original. O método splice() também retorna os elementos que foram 
+removidos do array. Se você deseja obter os elementos excluídos, também pode armazenar o elemento retornado
+ em alguma variável para uso posterior.
+Sintaxe:
+splice(start)
+splice(start, deleteCount)
+splice(start, deleteCount, item1)
+splice(start, deleteCount, item1, item2, itemN)
+O parâmetro start nos diz de qual elemento começar a manipular o array. 
+O parâmetro start pode assumir valores positivos ou negativos.
+Se você usar os valores positivos (1, 2, 3 …., n), ele começará a mudar a matriz da esquerda para a direita,
+e se você usar os valores negativos (-1, -2, -3, .. ., -n) então ele começará a mudar a matriz da direita para 
+a esquerda.
+
+>>>>>>> 	Método slice do array ⇒ Sintaxe, o que é e como usar <<<<<<<
+O método slice() retorna uma cópia de parte de um array a partir de um subarray criado entre as posições início 
+e fim (fim não é necessário) de um array original. Retorna outro array e não altera o array original.
+Este é um método que é bastante útil quando precisamos copiar apenas uma parte de um array. 
+Com o slice conseguimos determinar exatamente onde queremos começar e terminar a cópia. 
+Sintaxe:
+arr.slice([início[,fim]])
+
+
+

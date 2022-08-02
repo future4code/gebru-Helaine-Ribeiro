@@ -1,0 +1,15 @@
+// padrão
+GET http://localhost:3003/users
+###
+// filtro
+GET http://localhost:3003/users?name=miau
+###
+// ordenação
+GET http://localhost:3003/users?sort=title&order=DESC
+###
+// paginação
+GET http://localhost:3003/users?size=6&page=1
+###
+// todos juntos
+GET http://localhost:3003/users?name=miau&sort=miau&order=ASC&size=1&page=1
+Tsconfig.json
