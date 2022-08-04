@@ -4,6 +4,8 @@ import { CustomError } from "../error/CustomError";
 import { UserInputDTO } from "../model/userDTO";
 
 export class UserController {
+  constructor(private userBusiness: UserBusiness){}
+
  create = async (req: Request, res: Response)=> {
 
     try {
@@ -13,9 +15,9 @@ export class UserController {
         email, name, password
       }
 
-      const userBusiness = new UserBusiness();
+      //const userBusiness = new UserBusiness();
 
-      await userBusiness.create(input);
+      await this.userBusiness.create(input);
 
       res.status(201).send({ message: "Usuário cadastrado com sucesso" });
     } catch (error:any) {

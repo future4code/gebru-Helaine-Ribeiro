@@ -4,8 +4,11 @@ import { CustomError } from "../error/CustomError";
 import { generateId } from "../services/generateId";
 import { Movie } from "../model/Movie"
 import { MovieInputDTO } from "../model/movieDTO"
+import { MovieRepository } from "./MovieRepository";
 
 export class MovieBusiness {
+  constructor(private movieDatabase:MovieRepository){}
+
    createMovie = async (input: MovieInputDTO) => {
 
     try{
@@ -20,11 +23,11 @@ export class MovieBusiness {
 
     const id = generateId()
 
-    const movieDatabase = new MovieDatabase()
+    //const movieDatabase = new MovieDatabase()
 
 const movie = new Movie(id, title,description,durationInMinutes,yearOfRelease)
 
-    await movieDatabase.createMovie(movie)
+    await this.movieDatabase.createMovie(movie)
 
   } catch (error:any) {
     throw new CustomError(error.message || error.sqlMessage, error.statusCode);

@@ -4,6 +4,9 @@ import { CustomError } from "../error/CustomError";
 import { MovieInputDTO } from "../model/movieDTO";
 
 export class MovieController {
+
+  constructor(private movieBusiness:MovieBusiness){}
+
    createMovie = async(req: Request, res: Response)=> {
     try {
       const { title,description,durationInMinutes,yearOfRelease } = req.body;
@@ -15,9 +18,9 @@ export class MovieController {
         yearOfRelease
       }
 
-      const movieBusiness = new MovieBusiness();
+      //const movieBusiness = new MovieBusiness();
 
-      await movieBusiness.createMovie(input);
+      await this.movieBusiness.createMovie(input);
 
       res.status(201).send({ message: "filme cadastrado com sucesso" });
 
