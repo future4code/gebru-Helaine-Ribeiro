@@ -6,7 +6,7 @@
 
 /**************************** ENDPOINTS ******************************/
 
-app.post('/users', async (req: Request, res: Response) => {
+/* app.post('/users', async (req: Request, res: Response) => {
    try {
       let message = "Success!"
       const { name, email, password } = req.body
@@ -98,3 +98,4 @@ app.get('/posts/:id', async (req: Request, res: Response) => {
 
 
 
+ */
