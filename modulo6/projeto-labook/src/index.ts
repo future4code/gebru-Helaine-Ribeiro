@@ -1,12 +1,17 @@
+/* import { app } from "./controller/app"
+import { taskRouter } from "./controller/routes/taskRouter"
+import { userRouter } from "./controller/routes/userRouter"
 
 
 
 
+app.use('/user', userRouter )
 
+app.use('/task',taskRouter ) */
 
 /**************************** ENDPOINTS ******************************/
 
-/* app.post('/users', async (req: Request, res: Response) => {
+ /* app.post('/users', async (req: Request, res: Response) => {
    try {
       let message = "Success!"
       const { name, email, password } = req.body
@@ -98,4 +103,4 @@ app.get('/posts/:id', async (req: Request, res: Response) => {
 
 
 
- */
+  */
