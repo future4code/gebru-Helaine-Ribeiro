@@ -1,4 +1,5 @@
 import { connection } from "./index"
+//import {BasedataBase} from "./data/BaseDatabase"
 
 connection
    .raw(`

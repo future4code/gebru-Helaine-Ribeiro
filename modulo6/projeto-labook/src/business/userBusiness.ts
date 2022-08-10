@@ -1,5 +1,6 @@
-/* import { CustomError, InvalidEmail, InvalidName } from "../error/customError";
-import { user, UserInputDTO } from "../model/user";
+import { CustomError, InvalidEmail, InvalidName } from "../error/customError";
+import { user } from "../model/types";
+import {UserInputDTO } from "../model/userDTO";
 import { generateId } from "../services/generateId";
 import { UserRepository } from "./UserRepository";
 
@@ -8,9 +9,9 @@ export class UserBusiness {
  
   public createUser = async (input: UserInputDTO) => {
     try {
-      const { name, nickname, email, password } = input;
+      const { name,  email, password } = input;
 
-      if (!name || !nickname || !email || !password) {
+      if (!name  || !email || !password) {
         throw new CustomError(
           400,
           'Preencha os campos "name","nickname", "email" e "password"'
@@ -30,7 +31,6 @@ export class UserBusiness {
       const user: user = {
         id,
         name,
-        nickname,
         email,
         password,
       };
@@ -40,4 +40,4 @@ export class UserBusiness {
       throw new Error(error.message);
     }
   };
-} */
+} 

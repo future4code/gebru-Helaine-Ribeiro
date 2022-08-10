@@ -1,27 +1,27 @@
-/**************************** TYPES ******************************/
-
-type authenticationData = {
+export type authenticationData = {
     id: string
  }
  
- type user = {
+ export type user = {
     id: string,
     name: string,
     email: string,
     password: string
  }
  
- enum POST_TYPES {
+ export enum POST_TYPES {
     NORMAL = "normal",
     EVENT = "event"
  }
  
- type post = {
+ 
+
+ export type post = {
     id: string,
     photo: string,
     description: string,
     type: POST_TYPES,
-    createdAt: Date,
+    createdAt: Number,
     authorId: string
  }
  

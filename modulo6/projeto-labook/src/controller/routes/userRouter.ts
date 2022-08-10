@@ -1,9 +1,10 @@
-/* import express from "express";
-import { UserBusiness } from "../../business/UserBusiness";
-import { UserFirestoreDatabase } from "../../data/firestore/UserFirestoreDatabase";
-import { UserDatabase } from "../../data/mySQL/UserDatabase";
+ import express from "express";
+import { UserBusiness } from "../../business/userBusiness";
+import { UserDatabase } from "../../data/UserDataBase";
+import { UserController } from "../userController";
 
-import { UserController } from "../UserController";
+
+
 
 export const userRouter = express.Router()
 
@@ -11,4 +12,5 @@ const userDatabase = new UserDatabase()
 const userBusiness = new UserBusiness(userDatabase)
 const userController = new UserController(userBusiness)
 
-userRouter.post('/create', (req, res)=> userController.createUser(req, res)) */
+userRouter.post('/users', (req, res)=> userController.createUser(req, res)) 
+ 
