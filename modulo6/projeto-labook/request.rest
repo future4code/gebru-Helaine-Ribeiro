@@ -8,11 +8,12 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3003/movie/createMovie
+POST http://localhost:3003/post/posts1
 Content-Type: application/json
+
 {
-    "title": "endpoint4",
-    "description": "testando endpoint4",
-    "durationInMinutes": 85,
-    "yearOfRelease": 36
+    "photo": "https://i.pinimg.com/originals/84/92/b5/8492b59087eca943462880307c675cb7.jpg",
+    "description": "rapousa",
+    "type": "normal",
+    "authorId": "36"
 }

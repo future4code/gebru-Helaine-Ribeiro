@@ -1,4 +1,4 @@
- //import knex from 'knex'
+/*  //import knex from 'knex'
 import dotenv from 'dotenv'
 import { connection } from '..'
 
@@ -7,15 +7,15 @@ dotenv.config()
 export abstract class BaseDatabase {
 
   protected static connection = connection
-    } 
+    }  */
 
 
-/* import Knex from "knex";   
+import Knex from "knex";   
 import dotenv from "dotenv";
 
 dotenv.config()
 
-export abstract class BaseDataBase{
+export  class BaseDataBase{
 
   protected static connection = Knex({
     client: "mysql",
@@ -30,4 +30,4 @@ export abstract class BaseDataBase{
   })
 }
 
- */
+ 

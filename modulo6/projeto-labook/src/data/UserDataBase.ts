@@ -1,7 +1,7 @@
 import { user } from "../model/types";
-import { BaseDatabase } from "./BaseDatabase";
+import { BaseDataBase } from "./BaseDatabase";
 
-export class UserDatabase extends BaseDatabase {
+export class UserDatabase extends BaseDataBase {
   private static TABLE_NAME = "labook_users";
 
   async insertUser(user: user): Promise<void> {

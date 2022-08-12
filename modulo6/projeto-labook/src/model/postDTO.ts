@@ -1,5 +1,6 @@
 import { POST_TYPES } from "./types";
 
+
 export interface PostInputDTO{
     id: string,
     photo: string,

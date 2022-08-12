@@ -2,23 +2,15 @@ import knex from 'knex'
 import dotenv from 'dotenv'
 import { userRouter } from "./controller/routes/userRouter"
 import { app } from './app'
+import { postRouter } from './controller/routes/postRouter'
 
 
-dotenv.config()
 
-export const connection = knex({
-   client: "mysql",
-   connection: {
-     host: process.env.DB_HOST ,
-     port: 3306,
-     user: process.env.DB_USER ,
-     password: process.env.DB_PASSWORD ,
-     database: process.env.DB_SCHEMA  ,
-   }
- })
 
 
 app.use('/user', userRouter ) 
+
+app.use("/post", postRouter)
 
 
 

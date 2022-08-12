@@ -1,4 +1,4 @@
-/* import { Request, Response } from "express";
+ import { Request, Response } from "express";
 import { PostBusiness } from "../business/postBusiness";
 import { PostInputDTO } from "../model/postDTO";
 import { generateId } from "../services/generateId";
@@ -10,15 +10,22 @@ export class PostController {
 
   public createPost = async (req: Request, res: Response) => {
     try {
-        const { photo, description, type } = req.body
+        const { photo, description, type,createdAt,authorId} = req.body
 
         const postId: string = generateId()
+
 
       const input: PostInputDTO = {
         id: postId,
         photo ,
         description ,
-        type
+        type,
+        createdAt,
+        authorId
+
+       
+  
+   
     
         
       };
@@ -30,4 +37,4 @@ export class PostController {
       res.status(400).send(error.message);
     }
   };
-}   */
+}   
