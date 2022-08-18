@@ -1,0 +1,32 @@
+
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+   "name": "Locke", 
+   "nickname": "barrigudinho", 
+   "email": "locke@gmail.com" ,
+   "password": "156374"
+}
+
+###
+
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+
+   "email": "locke@gmail.com" ,
+   "password": "156374"
+}
+
+###
+
+PUT http://localhost:3003/user/edit/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdlYTk2Yzg1LTZlNDItNGU2Ny04MmYwLWUwMmVmMzUyM2M3YiIsImlhdCI6MTY2MDYwNjU5NywiZXhwIjoxNjYwNjEwMTk3fQ._v-3r5TVEx4WwRQIu6fFDV-l7uGyN-MOSvMToHL-IPA
+Content-Type: application/json
+
+{
+   "name": "Lolo",
+   "nickname": "lambelambe" 
+}
