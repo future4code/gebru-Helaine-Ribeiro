@@ -1,0 +1,31 @@
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+   "name": "Fred", 
+   "nickname": "Fefe", 
+   "email": "fred@gmail.com" ,
+   "password": "12345p",
+   "role": "NORMAL"
+}
+
+###
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+   "email": "fred@gmail.com", 
+   "password": "12345p"
+}
+
+
+###
+
+PUT http://localhost:3003/user/edit/0836b354-95b2-42e5-b21
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA4MzZiMzU0LTk1YjItNDJlNS1iMjE5LTk3NmNjMWZlYWE3OSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjEyOTg1MTAsImV4cCI6MTY2MTM4NDkxMH0.2fHcWLoOgIgfDVoNCGwReGbbox4_pYNuptxbaKKWNNU
+
+{
+   "name": "Frederico", 
+   "nickname": "fe"
+}
