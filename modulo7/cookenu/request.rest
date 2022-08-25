@@ -1,0 +1,31 @@
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+   "name": "PH", 
+   "nickname": "PH vascão", 
+   "email": "phvasco@labenu.com" ,
+   "password": "ihateflamengo",
+   "role": "NORMAL"
+}
+
+###
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+   "email": "phvasco@labenu.com", 
+   "password": "ihateflamengo"
+}
+
+
+###
+
+PUT http://localhost:3003/user/edit/:id
+Content-Type: application/json
+Authorization: passar o token
+
+{
+   "name": "Harry Osbourne", 
+   "nickname": "Globin Green"
+}
