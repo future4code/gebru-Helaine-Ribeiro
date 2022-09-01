@@ -1,4 +1,4 @@
-/* import { AuthenticationData } from "../model/types";
+import { AuthenticationData } from "../model/types";
 import * as jwt from "jsonwebtoken";
 
 class Authenticator {
@@ -22,4 +22,4 @@ class Authenticator {
     }
 }
 
-export default new Authenticator() */
+export default new Authenticator() 

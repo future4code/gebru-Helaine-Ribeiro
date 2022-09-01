@@ -1,12 +1,11 @@
+//criar usuarios
 POST http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
-   "name": "PH", 
-   "nickname": "PH vascão", 
-   "email": "phvasco@labenu.com" ,
-   "password": "ihateflamengo",
-   "role": "NORMAL"
+	"name": "Alice",
+	"email": "alice@lbn.com",
+	"password": "123456"
 }
 
 ###
@@ -14,13 +13,23 @@ POST http://localhost:3003/user/login
 Content-Type: application/json
 
 {
-   "email": "phvasco@labenu.com", 
-   "password": "ihateflamengo"
+   "email": "alice@lbn.com",
+	"password": "123456"
 }
 
 
 ###
+// pegar usuarios
+GET http://localhost:3003/user/profile
 
+
+
+###
+//Pegar perfil de outro usuário
+GET http://localhost:3003/user/:id
+
+###
+//alterar dados do usuario
 PUT http://localhost:3003/user/edit/:id
 Content-Type: application/json
 Authorization: passar o token
@@ -29,3 +38,21 @@ Authorization: passar o token
    "name": "Harry Osbourne", 
    "nickname": "Globin Green"
 }
+
+###
+//Criar receita 
+POST http://localhost:3003/recipe
+Content-Type: application/json
+
+{
+	"title": "título da receita",
+	"description": "descrição da receita"
+}
+
+###
+//pegar receita 
+GET http://localhost:3003/recipe/:id
+
+// deletar usuario
+###
+DELETE http://localhost:3003/users/:id

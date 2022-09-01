@@ -1,25 +1,17 @@
-CREATE TABLE IF NOT EXISTS Auth_users (
-    id VARCHAR(64) PRIMARY KEY,
-    name VARCHAR(64) NOT NULL,
-    nickname VARCHAR(64) NOT NULL,
-    email VARCHAR(64) NOT NULL,
-    password VARCHAR(64) NOT NULL
+-- Active: 1658871330862@@35.226.146.116@3306@gebru-4211824-helaine-ribeiro
+CREATE TABLE IF NOT EXISTS cookenu_users (
+        id VARCHAR(255) PRIMARY KEY,
+        name VARCHAR(255),
+        email VARCHAR(255) UNIQUE,
+        password VARCHAR(255)
 );
 
-CREATE TABLE IF NOT EXISTS Auth_tasks (
-    id VARCHAR(64) PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS cookenu_posts (
+    id VARCHAR(255) PRIMARY KEY,
     title VARCHAR(64) NOT NULL,
     description VARCHAR(1024) DEFAULT "No description provided",
-    deadline DATE,
-    status ENUM("TO_DO", "DOING", "DONE") DEFAULT "TO_DO",
-    author_id VARCHAR(64),
-    FOREIGN KEY (author_id) REFERENCES Auth_users(id)
+    createdAt DATE,
+    user_id VARCHAR(255),
+    FOREIGN KEY (user_id) REFERENCES cookenu_users(id)
 );
 
-CREATE TABLE IF NOT EXISTS Auth_assignees (
-    task_id VARCHAR(64),
-    assignee_id VARCHAR(64),
-    PRIMARY KEY (task_id, assignee_id),
-    FOREIGN KEY (task_id) REFERENCES Auth_tasks(id),
-    FOREIGN KEY (assignee_id) REFERENCES Auth_users(id)
-);
