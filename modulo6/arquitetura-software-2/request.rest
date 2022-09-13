@@ -1,0 +1,21 @@
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name": "teste",
+    "email": "email@email.com",
+    "password": "23432535"
+}
+
+###
+POST http://localhost:3003/movie/createMovie
+Content-Type: application/json
+
+{
+    "title": "endpoint2",
+    "description": "testando endpoint2",
+    "durationInMinutes": 22,
+    "yearOfRelease": 55
+}
+ 
+
