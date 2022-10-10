@@ -1,8 +1,11 @@
-export class Product{
-    constructor(
-     public id: string,
-     public name: string,
-     public tags: string
-     
-    ){} 
+
+export type Product = {
+    id: string,
+    name: string,
+    tags: string
 }
+
+type authenticationData = {
+    id: string
+ }
+ 
