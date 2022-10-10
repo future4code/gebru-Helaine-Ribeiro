@@ -1,0 +1,31 @@
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+   "name": "PH", 
+   "nickname": "PH vascão", 
+   "email": "phvasco@labenu.com" ,
+   "password": "ihateflamengo",
+   "role": "NORMAL"
+}
+
+###
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+   "email": "phvasco@labenu.com", 
+   "password": "ihateflamengo"
+}
+
+
+###
+
+PUT http://localhost:3003/user/edit/c3a07e0b-d9f4-4240-9d2e-3400404dc0e1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZkMTJjNDEzLTY4ZWUtNDZlYy1iYmIxLTczYzhiZWNlNzRmYSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjEyMTE3MDYsImV4cCI6MTY2MTI5ODEwNn0.e4JbjL2RRuCxNcNwmr4G2_W5C-ByTYLc1TkFhleZrhw
+
+{
+   "name": "Harry Osbourne", 
+   "nickname": "Globin Green"
+}
