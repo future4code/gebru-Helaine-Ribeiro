@@ -5,3 +5,4 @@ CREATE TABLE IF NOT EXISTS table_products (
         tags VARCHAR(255)
         
       );
+

@@ -8,20 +8,15 @@ const printError = (error: any) => { console.log(error.sqlMessage || error.messa
 const createTables = () => connection
    .raw(`
      
-
       CREATE TABLE IF NOT EXISTS table_products (
         id VARCHAR(255) PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
-        price float NOT NULL,
-        image_url VARCHAR(255) NOT NULL
+        tags VARCHAR(255) NOT NULL
       );
 
-   
 `)
    .then(() => { console.log("Tabela criada") })
    .catch(printError)
-
-
 
 // Inserindo produtos que estão no arquivo products.json na tabela 
 const insertProducts = () => connection("table_products")

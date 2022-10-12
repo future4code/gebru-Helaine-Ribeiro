@@ -4,27 +4,28 @@ export class CustomError extends Error {
     }
 }
 
-export class InvalidName extends CustomError{ 
-    constructor(){
-        super(400, "Nome inválido")
+
+export class invalidAuthenticatorData extends CustomError {
+    constructor() {
+        super(400, "Unauthorized user")
     }
 }
 
-export class InvalidEmail extends CustomError{ 
-    constructor(){
-        super(400, "Email inválido")
+export class invalidToken extends CustomError {
+    constructor() {
+        super(400, "Tokem needs to be passed in headers")
     }
 }
 
-export class InvalidPassword extends CustomError{ 
-    constructor(){
-        super(400, "Senha inválida")
+export class MissingFieldsToComplete extends CustomError {
+    constructor() {
+        super(401, "Missing fields to complet")
     }
-}
+} 
 
-export class UserNotFound extends CustomError{ 
+export class Unauthorized extends CustomError { 
     constructor(){
-        super(404, "Usuário não encontrado")
+        super(401, 'Unauthorized user')
     }
 }
 
@@ -33,3 +34,9 @@ export class UnathorizedUser extends CustomError{
         super(401, "Usuário não autorizado")
     }
 }
+
+export class invalidProduct extends CustomError {
+        constructor() {
+            super(404, "Has no products")
+        }
+    }
