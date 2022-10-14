@@ -1,14 +1,14 @@
 
-POST http://localhost:3003/products
+POST http://localhost:3003/product/create
 Content-Type: application/json
 
 {
-   "name": "VESTIDO MULA MANGA",
-   "tags": ["neutro", "delicado", "balada"]
-};
+   "name": "BLUSA",
+   "tags": "neutro"
+}
 
 ###
-GET http://localhost:3003/products/8367
+GET http://localhost:3003/product/8371
 
 
 

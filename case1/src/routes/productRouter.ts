@@ -13,6 +13,6 @@ const productBusiness = new ProductBusiness(productDatabase)
 const productController = new ProductController(productBusiness)
 
 
-productRouter.post("/products", (req, res) => productController.createProductController(req, res))
-productRouter.get("/products/:id", (req, res) => productController.productByIdController(req, res))
-productRouter.post("/insert", (req, res) => productController.insertProductController(req, res))
+productRouter.post("/create", (req, res) => productController.createProductController(req, res))
+productRouter.get("/:id", (req, res) => productController.productByIdController(req, res))
+//productRouter.post("/insert", (req, res) => productController.insertProductController(req, res))

@@ -13,12 +13,10 @@ export class ProductDatabase extends BaseDatabase implements ProductRepository {
         try {
             await ProductDatabase.connection
                 .insert({
-                    id: product.id,
-                    name: product.name,
-                    tags: product.tags
-                    
-                    
-                })
+                id: product.id,
+                name:product.name,
+                tags:product.tags
+        })
                 .into(ProductDatabase.TABLE_NAME)
 
         } catch (error: any) {
@@ -28,31 +26,17 @@ export class ProductDatabase extends BaseDatabase implements ProductRepository {
 
     async selectProductById(id: string): Promise<Product> {
         try {
-            const [product] = await ProductDatabase.connection
-                .select("id", "name", "tags")
+            const product = await ProductDatabase.connection
+                .select("name", "tags")
                 .where({ id })
                 .into(ProductDatabase.TABLE_NAME)
 
 
-            return product
+            return product [0]
 
         } catch (error: any) {
             throw new CustomError(error.statusCode, error.sqlMessage || error.message)
         }
     }
-
-    async insertProduct(): Promise<void> {
-        try {
-            await ProductDatabase.connection
-                .insert(products)
-                .into(ProductDatabase.TABLE_NAME)
-                .then(() => { console.log("Produtos criados") })
-
-        } catch (error: any) {
-            throw new CustomError(error.statusCode, error.sqlMessage || error.message)
-        }
-    }
-
-
 
 }

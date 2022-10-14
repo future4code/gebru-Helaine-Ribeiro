@@ -1,22 +1,34 @@
+export class Products {
+    constructor(
+        private id: string,
+        private name:string,
+        private tags: [string],
+    ){}
 
+    public getId () {
+        return this.id
+    }
+    public getName () {
+        return this.name
+    }
+    public getTags () {
+        return this.tags
+    }
+}
 export type Product = {
     id: string,
     name: string,
-    tags: []
+    tags: string
 }
 
-export type AuthenticationData = {
+ export type AuthenticationData = {
     id: string
- }
+ } 
  
  export interface ProductInputDTO{
     name: string,
-    tags: []
-    token:string
+    tags: string
  } 
 
- export interface InsertProductInputDTO {
-    name: string,
-    tags: []
+ 
    
-}
