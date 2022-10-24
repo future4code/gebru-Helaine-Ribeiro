@@ -13,13 +13,7 @@ export class PokemonBusiness {
         await this.pokemonDatabase.InsertPokemon(pokemon);
         
       });
-      /* let { id,name,pokedex_number,type,weather,STAT_TOTAL,ATK,DEF,STA  } = pokemon;
-
-      if (!id || !name || !pokedex_number || !type || !weather || !STAT_TOTAL || !ATK || !DEF || !STA ) {
-        throw new MissingFieldsToComplete();
-      }
-
-      await this.pokemonDatabase.InsertPokemon(pokemon); */
+     
 
  
     } catch (error: any) {
@@ -27,6 +21,14 @@ export class PokemonBusiness {
     }
   }
 }
+
+ /* let { id,name,pokedex_number,type,weather,STAT_TOTAL,ATK,DEF,STA  } = pokemon;
+
+      if (!id || !name || !pokedex_number || !type || !weather || !STAT_TOTAL || !ATK || !DEF || !STA ) {
+        throw new MissingFieldsToComplete();
+      }
+
+      await this.pokemonDatabase.InsertPokemon(pokemon); */
     
   
     /* async findUserBusiness(token: string) {

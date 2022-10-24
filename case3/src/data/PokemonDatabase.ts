@@ -7,7 +7,7 @@ import { BaseDatabase } from "./BaseDatabase";
 
 export class PokemonDatabase extends BaseDatabase implements PokemonRepository{
 
-    private static TABLE_NAME = "Pokemom_Go"
+    private static TABLE_NAME = "Pokemon_Go"
  
     async InsertPokemon(pokemon: Pokemon): Promise<void> {
         try {
@@ -20,7 +20,7 @@ export class PokemonDatabase extends BaseDatabase implements PokemonRepository{
         }
     }
 
-    async createPokemon(pokemon: Pokemon): Promise<void> {
+    /* async createPokemon(pokemon: Pokemon): Promise<void> {
         try {
             await PokemonDatabase.connection
             .insert({
@@ -41,9 +41,9 @@ export class PokemonDatabase extends BaseDatabase implements PokemonRepository{
         } catch (error: any) {
             throw new CustomError(error.statusCode, error.sqlMessage || error.message)
         }
-    }
+    } */
 
-    async selectByPkemon(name: string): Promise<Pokemon> {
+   /*  async selectByPkemon(name: string): Promise<Pokemon> {
         try {
 
             const user = await PokemonDatabase.connection
@@ -68,5 +68,5 @@ export class PokemonDatabase extends BaseDatabase implements PokemonRepository{
         } catch (error: any) {
             throw new CustomError(error.statusCode, error.sqlMessage || error.message)
         }
-    }
+    } */
 }

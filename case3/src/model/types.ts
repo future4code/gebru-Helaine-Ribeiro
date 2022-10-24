@@ -4,7 +4,7 @@ export interface AuthenticationData {
 }
 
 export interface Pokemon{
-    id: string,
+  id: string,
     name: string,
     pokedex_number: number,
     type: string,
@@ -15,25 +15,15 @@ export interface Pokemon{
     STA: number
  } 
  
- export interface PokemonInputDTO{
-    name: string,
-    pokedex_number: number,
-    type: string,
-    weather: string,
-    STAT_TOTAL: number,
-    ATK: number,
-    DEF: number,
-    STA: number
- }
 
  export interface PokemonDTO{
-    id:string,
-    name: string,
-    pokedex_number: number,
-    type: string,
-    weather: string,
-    STAT_TOTAL: number,
-    ATK: number,
-    DEF: number,
-    STA: number
+  id: string
+   name: string,
+   pokedex_number: number,
+   type: string,
+   weather: string,
+   STAT_TOTAL: number,
+   ATK: number,
+   DEF: number,
+   STA: number
  }

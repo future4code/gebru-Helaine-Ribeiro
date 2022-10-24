@@ -5,7 +5,7 @@ import readXlsxFile from 'read-excel-file/node'
 import { PokemonDTO } from "../model/types";
 import { CustomError } from "../error/CustomError";
 
- const fileName = path.resolve(__dirname,"PokemomGo.xlsx");
+ const fileName = path.resolve(__dirname,"PokemonGo.xlsx");
 
 export class PokemonController {
   constructor(private pokemonBusiness: PokemonBusiness) {}
@@ -13,32 +13,29 @@ export class PokemonController {
   async insertPokemonController(req: Request, res: Response) {
  
     try {
-      console.log(this.insertPokemonController)
 
-const pokemons =  await readXlsxFile(fileName).then((rows:any[])=> rows.map((row:any):PokemonDTO => {
-        
+const pokemons =  await readXlsxFile(fileName).then((rows:any[])=> rows.map((row:any[0]):PokemonDTO => {
+  
         return{
-          id: row.id,
-          name: row.name,
-          pokedex_number: row.pokedex_number,
-          type: row.type,
-          weather: row.weather,
-          STAT_TOTAL: row.STAT_TOTAL,
-          ATK: row.ATK,
-          DEF: row.DEF,
-          STA: row.STA
+          id: row[0].id,
+          name: row[1].name,
+          pokedex_number: row[2].pokedex_number,
+          type: row[3].type,
+          weather: row[4].weather,
+          STAT_TOTAL: row[5].STAT_TOTAL,
+          ATK: row[6].ATK,
+          DEF: row[7].DEF,
+          STA: row[8].STA
         }; 
     }) 
-    )
-    ;pokemons.shift()
+    );
+    pokemons.shift();
        
        await this.pokemonBusiness.pokemonBusiness(pokemons);
-       console.log(pokemons)
+      
   
-        res.status(201).send({
-          message: "All items stored into database successfully!",
-          
-        });
+        res.status(201).send("All items stored into database successfully!");
+
       } catch (error: any) {
         throw new CustomError(error.statusCode, error.sqlMessage || error.message);
       }
