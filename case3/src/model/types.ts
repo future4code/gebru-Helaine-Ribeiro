@@ -6,7 +6,6 @@ export interface AuthenticationData {
 export interface Pokemon{
   id: string,
     name: string,
-    pokedex_number: number,
     type: string,
     weather: string,
     STAT_TOTAL: number,
@@ -17,9 +16,7 @@ export interface Pokemon{
  
 
  export interface PokemonDTO{
-  id: string
    name: string,
-   pokedex_number: number,
    type: string,
    weather: string,
    STAT_TOTAL: number,

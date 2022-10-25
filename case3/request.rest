@@ -1,4 +1,61 @@
+//inserir arquivo xlsx no banco de dados
 POST http://localhost:3003/pokemon/insert
 Content-Type: application/json
 
 ###
+//criar pokemon
+POST http://localhost:3003/pokemon/create
+Content-Type: application/json
+
+{
+	"name": "Spearow",
+	"type":"normal",
+	"weather":"Partly cloudy",
+	"STAT_TOTAL":253,
+	"ATK":112,
+	"DEF":61,
+	"STA": 80
+};
+
+//pegar pokemon pelo id
+###
+GET http://localhost:3003/pokemon/get/1
+
+//pegar pokemon pelo nome
+###
+GET http://localhost:3003/pokemon/get/Bulbasaur
+
+###
+//pegar produtos
+###
+GET http://localhost:3003/pokemon
+
+//alterar dados do pokemon
+###
+PUT http://localhost:3003/pokemon/change/:id
+Content-Type: application/json
+
+{
+    "name": "Spearow",
+	"type":"normal",
+	"weather":"Partly cloudy",
+	"STAT_TOTAL":253,
+	"ATK":112,
+	"DEF":61,
+	"STA": 80 
+}
+
+// deletar pokemon
+###
+DELETE http://localhost:3003/pokemon/delete/20
+
+//Fearow	normal	Partly cloudy	447	182	135	130
+//Ekans	poison	Cloudy	282	110	102	70
+//Pikachu	electric	Rainy	283	112	101	70
+//Psyduck	water	Rainy	318	122	96	100
+//Tauros	normal	Partly cloudy	545	198	197	150
+//Snorlax	normal	Partly cloudy	700	190	190	320
+//Flaaffy	electric	Rainy	397	145	112	140
+//Ampharos	electric	Rainy	563	211	172	180
+//Bellossom	grass	Sunny/clear	508	169	189	150
+//Marill	water	Rainy	270	37	93	140

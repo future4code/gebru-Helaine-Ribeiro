@@ -1,4 +1,3 @@
-
 import { PokemonRepository } from "../business/PokemonRepository";
 import { CustomError } from "../error/CustomError";
 import { Pokemon } from "../model/types";
@@ -15,43 +14,46 @@ export class PokemonDatabase extends BaseDatabase implements PokemonRepository{
                 .insert(pokemon)
                 .into(PokemonDatabase.TABLE_NAME)
 
+                
+
         } catch (error: any) {
             throw new CustomError(error.statusCode, error.sqlMessage || error.message)
         }
     }
 
-    /* async createPokemon(pokemon: Pokemon): Promise<void> {
+     async createPokemon(pokemon: Pokemon): Promise<void> {
         try {
             await PokemonDatabase.connection
-            .insert({
+            //.insert(pokemon)
+             .insert({
                 id: pokemon.id,
                 name: pokemon.name,
-                pokedex_number : pokemon.pokedex_number,
                 type: pokemon.type,
                 weather: pokemon.weather,
                 STAT_TOTAL: pokemon.STAT_TOTAL,
                 ATK: pokemon.ATK,
                 DEF: pokemon.DEF,
                 STA: pokemon.STA
-            })
-
+            }) 
+          
            .into(PokemonDatabase.TABLE_NAME)
-
+          
 
         } catch (error: any) {
             throw new CustomError(error.statusCode, error.sqlMessage || error.message)
         }
-    } */
+    } 
 
-   /*  async selectByPkemon(name: string): Promise<Pokemon> {
+     async selectByPkemonName(name: string): Promise<Pokemon> {
         try {
 
-            const user = await PokemonDatabase.connection
-                .select("id","name","pokedex_number" ,"type","weather","STAT_TOTAL","ATK","DEF","STA")
+            const pokemon = await PokemonDatabase.connection
+                .select("id","name","type","weather","STAT_TOTAL","ATK","DEF","STA")
                 .where({name})
                 .into(PokemonDatabase.TABLE_NAME)
 
-            return user[0]
+            return pokemon[0]
+
         } catch (error: any) {
             throw new CustomError(error.statusCode, error.sqlMessage || error.message)
         }
@@ -59,14 +61,43 @@ export class PokemonDatabase extends BaseDatabase implements PokemonRepository{
 
     async selectPokemonById(id: string): Promise<Pokemon> {
         try {
-            const user = await PokemonDatabase.connection
-                .select("name","pokedex_number" ,"type","weather","STAT_TOTAL","ATK","DEF","STA")
+            const pokemon = await PokemonDatabase.connection
+                .select("name" ,"type","weather","STAT_TOTAL","ATK","DEF","STA")
                 .where({ id })
                 .into(PokemonDatabase.TABLE_NAME)
 
-            return user[0]
+            return pokemon[0]
         } catch (error: any) {
             throw new CustomError(error.statusCode, error.sqlMessage || error.message)
         }
-    } */
+    } 
+
+    async deletPokemonById(id: string): Promise<void> {
+        try {
+             await PokemonDatabase.connection
+                .delete()
+                .where({id})
+                .into(PokemonDatabase.TABLE_NAME)
+
+               
+
+        } catch (error: any) {
+            throw new CustomError(error.statusCode, error.sqlMessage || error.message)
+        }
+    } 
+
+    async changePokemon(id: string,name:string,type:string,weather:string,STAT_TOTAL:number,ATK:number,DEF:number,STA:number): Promise< void> {
+        try {
+             await PokemonDatabase.connection
+
+                .update({id,name,type,weather,STAT_TOTAL,ATK,DEF,STA})
+                .where({id})
+                .into(PokemonDatabase.TABLE_NAME)
+
+             
+
+        } catch (error: any) {
+            throw new CustomError(error.statusCode, error.sqlMessage || error.message)
+        }
+    } 
 }

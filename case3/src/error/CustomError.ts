@@ -10,9 +10,9 @@ export class InvalidName extends CustomError{
     }
 }
 
-export class invalidToken extends CustomError {
+export class invalidPokemon extends CustomError {
     constructor() {
-        super(400, "Tokem needs to be passed in headers")
+        super(404, "Has no pokemons")
     }
 }
 

@@ -11,7 +11,16 @@ const pokemonDataBase = new PokemonDatabase()
 const pokemonBusiness = new PokemonBusiness(pokemonDataBase)
 const pokemonController = new PokemonController(pokemonBusiness)
 
+// insere o arquivo pokemon.xlsx no banco de dados  
 pokemonRouter.post("/insert", (req, res) => pokemonController.insertPokemonController(req, res))
-//userRouter.post("/login", (req, res) => pokemonController.loginController(req, res))
-//userRouter.get("/user", (req, res) => pokemonController.findUserController(req, res))
-//userRouter.get("/user/:id", (req, res) => pokemonController.getUserByIdController(req, res))
+// cria um novo pokemon 
+pokemonRouter.post("/create", (req, res) => pokemonController.createPokemonController(req, res))
+// pega pokemon pelo nome
+pokemonRouter.get("/get/:name", (req, res) => pokemonController.getPokemonByNameController(req, res))
+// pega pokemon pelo id
+pokemonRouter.get("/get/:id", (req, res) => pokemonController.getPokemonByIdController(req, res))
+//deleta
+pokemonRouter.delete("/delete/:id", (req, res) => pokemonController.deletePokemonByIdController(req, res))
+// altera o pokemon
+pokemonRouter.put("/change/:id", (req, res) => pokemonController.changePokemonController(req, res))
+
