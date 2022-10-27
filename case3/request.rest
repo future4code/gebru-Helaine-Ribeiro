@@ -8,14 +8,14 @@ POST http://localhost:3003/pokemon/create
 Content-Type: application/json
 
 {
-	"name": "Spearow",
+	"name":"Fearow",
 	"type":"normal",
 	"weather":"Partly cloudy",
-	"STAT_TOTAL":253,
-	"ATK":112,
-	"DEF":61,
-	"STA": 80
-};
+	"STAT_TOTAL":447,
+	"ATK":182,
+	"DEF":135,
+	"STA": 130
+}
 
 //pegar pokemon pelo id
 ###
@@ -26,23 +26,22 @@ GET http://localhost:3003/pokemon/get/1
 GET http://localhost:3003/pokemon/get/Bulbasaur
 
 ###
-//pegar produtos
-###
+//pegar pokemons
 GET http://localhost:3003/pokemon
 
-//alterar dados do pokemon
+//alterar dados do pokemon pelo id
 ###
-PUT http://localhost:3003/pokemon/change/:id
+PUT http://localhost:3003/pokemon/change/c220b1a1-05ba-45ee-a7ed-570d3d088ef9
 Content-Type: application/json
 
 {
-    "name": "Spearow",
+    "name":"Spearow",
 	"type":"normal",
 	"weather":"Partly cloudy",
-	"STAT_TOTAL":253,
-	"ATK":112,
+	"STAT_TOTAL":257,
+	"ATK":114,
 	"DEF":61,
-	"STA": 80 
+	"STA": 82 
 }
 
 // deletar pokemon

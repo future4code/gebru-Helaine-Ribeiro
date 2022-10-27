@@ -32,14 +32,14 @@ export class PokemonBusiness {
   async createPokemonBusiness(input: PokemonDTO) {
     try {
 
-        const { name,type,weather,STAT_TOTAL,ATK,DEF,STA } = input
+        const { name,type,weather,STAT_TOTAL,ATK,DEF,STA } = input;
 
 
         if ( !name  || !type || !weather || !STAT_TOTAL || !ATK || !DEF || !STA ) {
           throw new MissingFieldsToComplete();
         }
 
-        const id = new IdGenerator().generateId()
+        const id = new IdGenerator().generateId();
         
 
         const pokemon: Pokemon = {
@@ -53,8 +53,21 @@ export class PokemonBusiness {
             STA
         }
 
-        await this.pokemonDatabase.createPokemon(pokemon)
+        await this.pokemonDatabase.createPokemon(pokemon);
 
+
+      } catch (error: any) {
+        throw new CustomError(error.statusCode, error.sqlMessage || error.message);
+      }
+    }
+
+    async getPokemonBusiness(id:string,name:string,type:string,weather:string,STAT_TOTAL:number,ATK:number,DEF:number,STA:number) {
+      try {
+        
+  
+        const pokemons = await this.pokemonDatabase.selectPokemon(id,name,type,weather,STAT_TOTAL,ATK,DEF,STA);
+  
+        return pokemons;
 
       } catch (error: any) {
         throw new CustomError(error.statusCode, error.sqlMessage || error.message);

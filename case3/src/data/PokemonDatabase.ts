@@ -24,8 +24,8 @@ export class PokemonDatabase extends BaseDatabase implements PokemonRepository{
      async createPokemon(pokemon: Pokemon): Promise<void> {
         try {
             await PokemonDatabase.connection
-            //.insert(pokemon)
-             .insert({
+            .insert(pokemon)
+             /* .insert({
                 id: pokemon.id,
                 name: pokemon.name,
                 type: pokemon.type,
@@ -34,7 +34,7 @@ export class PokemonDatabase extends BaseDatabase implements PokemonRepository{
                 ATK: pokemon.ATK,
                 DEF: pokemon.DEF,
                 STA: pokemon.STA
-            }) 
+            })  */
           
            .into(PokemonDatabase.TABLE_NAME)
           
@@ -43,6 +43,23 @@ export class PokemonDatabase extends BaseDatabase implements PokemonRepository{
             throw new CustomError(error.statusCode, error.sqlMessage || error.message)
         }
     } 
+
+    async selectPokemon(): Promise<void> {
+        try {
+
+            const pokemon = await PokemonDatabase.connection
+                .select('*')
+                .into(PokemonDatabase.TABLE_NAME)
+
+            return pokemon[0]
+        
+
+        } catch (error: any) {
+            throw new CustomError(error.statusCode, error.sqlMessage || error.message)
+        }
+    }
+    
+
 
      async selectByPkemonName(name: string): Promise<Pokemon> {
         try {
