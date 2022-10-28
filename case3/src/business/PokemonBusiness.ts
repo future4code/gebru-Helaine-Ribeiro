@@ -61,11 +61,11 @@ export class PokemonBusiness {
       }
     }
 
-    async getPokemonBusiness(id:string,name:string,type:string,weather:string,STAT_TOTAL:number,ATK:number,DEF:number,STA:number) {
+  
+      async getPokemonBusiness() {
       try {
         
-  
-        const pokemons = await this.pokemonDatabase.selectPokemon(id,name,type,weather,STAT_TOTAL,ATK,DEF,STA);
+        const pokemons = await this.pokemonDatabase.selectPokemon()
   
         return pokemons;
 
@@ -100,6 +100,7 @@ export class PokemonBusiness {
         throw new CustomError(error.statusCode, error.sqlMessage || error.message);
       }
     }
+
   
     async deletePokemonByIdBusiness(id: string) {
 
@@ -114,6 +115,7 @@ export class PokemonBusiness {
       }
     }
   
+    
     async changePokemonBusiness(id: string,name:string,type:string,weather:string,STAT_TOTAL:number,ATK:number,DEF:number,STA:number) {
 
       try {

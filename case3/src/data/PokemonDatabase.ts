@@ -44,14 +44,14 @@ export class PokemonDatabase extends BaseDatabase implements PokemonRepository{
         }
     } 
 
-    async selectPokemon(): Promise<void> {
+    async selectPokemon(): Promise<Pokemon[]> {
         try {
 
-            const pokemon = await PokemonDatabase.connection
+            const pokemon = await PokemonDatabase.connection(PokemonDatabase.TABLE_NAME)
                 .select('*')
-                .into(PokemonDatabase.TABLE_NAME)
+            
 
-            return pokemon[0]
+            return pokemon
         
 
         } catch (error: any) {

@@ -27,7 +27,7 @@ GET http://localhost:3003/pokemon/get/Bulbasaur
 
 ###
 //pegar pokemons
-GET http://localhost:3003/pokemon
+GET http://localhost:3003/pokemon/get
 
 //alterar dados do pokemon pelo id
 ###

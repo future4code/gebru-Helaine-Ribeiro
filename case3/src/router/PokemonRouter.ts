@@ -15,8 +15,11 @@ const pokemonController = new PokemonController(pokemonBusiness)
 pokemonRouter.post("/insert", (req, res) => pokemonController.insertPokemonController(req, res))
 // cria um novo pokemon 
 pokemonRouter.post("/create", (req, res) => pokemonController.createPokemonController(req, res))
+
 // pega pokemons
+
 pokemonRouter.get("/get", (req, res) => pokemonController.getPokemonController(req, res))
+
 // pega pokemon pelo nome
 pokemonRouter.get("/get/:name", (req, res) => pokemonController.getPokemonByNameController(req, res))
 // pega pokemon pelo id

@@ -71,21 +71,19 @@ const pokemons =  await readXlsxFile(fileName).then((rows:any[])=> rows.map((row
         }
       }
 
-      // pega todos os pokemons
-      /* async getPokemonController(req: Request, res: Response) {
+// pega todos os pokemons
+       async getPokemonController(req: Request, res: Response) {
         try {
   
-          const { id,name,type,weather,STAT_TOTAL,ATK,DEF,STA } = req.query;
+            const pokemon = await this.pokemonBusiness.getPokemonBusiness()
 
-            const pokemon = await this.pokemonBusiness.getPokemonBusiness(id,name,type,weather,STAT_TOTAL,ATK,DEF,STA)
-
-  
+            
             res.status(200).send(pokemon)
   
           } catch (error: any) {
             throw new CustomError(error.statusCode, error.sqlMessage || error.message);
           }
-        } */
+        } 
   
 // pega pokemon pelo id
   async getPokemonByIdController(req: Request, res: Response) {
@@ -106,7 +104,7 @@ const pokemons =  await readXlsxFile(fileName).then((rows:any[])=> rows.map((row
         }
       }
 
-      // pega pokemon pelo nome     
+// pega pokemon pelo nome     
 async getPokemonByNameController(req: Request, res: Response) {
   try {
 
@@ -143,7 +141,7 @@ async deletePokemonByIdController(req: Request, res: Response) {
     }
   }
  
-  // altera o pokemon
+// alterar pokemon
   async changePokemonController(req: Request, res: Response) {
     try {
   

@@ -1,36 +1,19 @@
-# Teste de Backend
+## Case Pokémon Go!
 
-Olá Dev! Tudo bem?
+Ultilizou-se da bliblioteca readXlsxFile para importar os dados do arquivo PokemonGo.XLSX, que estão no excel, e foi criado uma API usando NodeJS para que possamos consumir estes dados de maneira prática, rápida e automatizada.
 
-Nós estamos sempre em busca de profissionais interessantes e interessados, com boa capacidade de aprendizado, adaptação e principalmente bom senso!
+Esta API  seguiu as práticas RESTful  contendo listagens, busca, deletar, paginação e filtros.
 
-Este teste tem como objetivo avaliar e desafiar você. Não é obrigatório realizá-lo completamente, queremos apenas reconhecer seu esforço e potencial para aprender, se adaptar e tomar decisões.
+## Tecnologias usadas:
 
-Vamos ao teste!
-
-## Desafio Pokémon Go!
-
-Sua missão é importar os dados do Pokemon Go, que estão no excel, e criar uma API usando NodeJS para que possamos consumir estes dados de maneira prática, rápida e automatizada.
-
-Esta API deverá seguir o mínimo de práticas RESTful e conter listagens, busca, paginação e filtros. Fique à vontade para decidir quais filtros são mais interessantes.
-
-## Consigo fazer?
-
-Consegue sim! Só precisa saber (ou aprender agora) um pouco sobre as seguintes tecnologias:
 - Conceitos de API RESTful
 - Modelagem de dados
 - NodeJS
-- Algum banco de dados, por exemplo, MySQL, SQL Server, MongoDB, etc...
+- banco de dados MySQL
 - Git
 
-## Por onde começo?
+## Como iniciar o projeto?
 
-Primeiramente, você pode fazer um fork desse repositório aqui, para sua conta do Github, depois disso crie uma branch nova com o seu nome (ex: nome_sobrenome), para podermos indentificá-lo.
+Primeiramente, foi criado um repositório na conta do Github, depois disso cria-se uma branch nova com o nome do projeto (ex: case), em seguida instala as blibliotecas a serem usadas , faz uma arquitetura das páginas, cria os endpoints, válida as requisições e solicita  um pull request para a branch do nosso repositório. 
 
-Após terminar o desafio, você pode solicitar um pull request para a branch master do nosso repositório. Vamos receber e fazer a avaliação de todos.
 
-## Só isso?
-
-Só! Mas se quiser fazer a diferença, tente implementar um pouco de TDD e utilizar docker para execução do projeto.
-
-Boa sorte! :)
