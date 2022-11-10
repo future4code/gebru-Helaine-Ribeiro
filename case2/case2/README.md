@@ -1,10 +1,10 @@
 ## Projeto React  - Movies
 Este projeto usa a biblioteca React para consumir uma lista de filmes populares da API TheMovieDB.
-![image](https://user-images.githubusercontent.com/90282001/201101094-ddf0b90d-513a-4ad3-8c1d-5b4763c89723.png)
+![image](https://user-images.githubusercontent.com/90282001/201101663-15bf553e-5b94-41d2-8659-df7c3783ef9c.png)
 
 
 Você também pode ver os detalhes de um filme ao clicar nele.
-![image](https://user-images.githubusercontent.com/90282001/201101157-44cd07a3-5ebf-460d-a369-2247da768ced.png)
+![image](https://user-images.githubusercontent.com/90282001/201101782-849d84f6-b6bc-4744-86c9-e4962556ed5a.png)
 
 
 Tecnologias usadas:
