@@ -1,0 +1,5 @@
+// chave da API 52ffd2d585ba05d93ee8f8282b609a06
+export const api_key = '52ffd2d585ba05d93ee8f8282b609a06'
+
+//Token de Leitura da API (v4 auth)
+//eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MmZmZDJkNTg1YmEwNWQ5M2VlOGY4MjgyYjYwOWEwNiIsInN1YiI6IjYzNmE3ZGZmNjkzZTIwMDA3ZjdmMjBlNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.DFiEofJ7oHeJgasQyALrFXs8_C8mBeobWMAbkF-wbDY
