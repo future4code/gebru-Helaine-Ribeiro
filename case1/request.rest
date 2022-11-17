@@ -1,0 +1,15 @@
+
+POST http://localhost:3003/product/create
+Content-Type: application/json
+
+{
+   "name": "BLUSA",
+   "tags": "neutro"
+}
+
+###
+GET http://localhost:3003/product/8371
+
+
+
+
