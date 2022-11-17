@@ -8,6 +8,7 @@ import { ProductRepository } from "./productRepository";
 export class ProductBusiness {
     constructor(private productDatabase: ProductRepository) { }
 
+
     async createProductBusiness(input:ProductInputDTO) {
         try {
 

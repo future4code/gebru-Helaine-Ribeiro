@@ -2,7 +2,7 @@ import { ProductRepository } from "../business/productRepository"
 import { CustomError } from "../error/CustomError"
 import { Product } from "../model/types"
 import { BaseDatabase } from "./baseDatabase"
-import products from "../model/products.json"
+//import products from "../model/products.json"
 
 
 export class ProductDatabase extends BaseDatabase implements ProductRepository {
