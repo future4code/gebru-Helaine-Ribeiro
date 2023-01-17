@@ -1,0 +1,27 @@
+.headerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+border-radius: 15px  15px 15px 15px ;
+  
+    background-color:red ;
+    
+ 
+   
+   
+    
+  margin-left: 400px;
+  margin-right: 400px;
+ 
+
+    width: 38vw;
+}
+
+.imagem{
+ object-fit: contain;
+ height: 40px;
+}
+
+.header_icon{
+    padding: 20px;
+}
